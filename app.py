@@ -3,6 +3,13 @@ import src.pages.home
 import src.pages.black_scholes_model
 import src.pages.square_test
 
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
+
 PAGES = {
     "Home": src.pages.home,
     "Black-Scholes Model": src.pages.black_scholes_model,
