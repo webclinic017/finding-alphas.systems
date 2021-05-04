@@ -12,7 +12,7 @@ def app():
     S = st.number_input("Current underlying asset price", value=100)
     K = st.number_input("Strike price", value=100)
     r = st.number_input("Risk-free interest rate", value = 0.02)
-    T = st.number_input("Time to maturity", value = 1)
+    T = st.number_input("Time to maturity (Year)", value = 1.0)
     sigma = st.number_input("Standard deviation of the underlying asset's returns", value = 0.2)
 
     if (st.button('Estimate Option Price')):
