@@ -19,7 +19,7 @@ def app():
         min_value = features[feature][0]
         max_value = features[feature][1]
         unit = (max_value - min_value)/100
-        feature_value[feature] = st.slider(feature, min_value, max_value, (min_value+25*unit, max_value-25*unit))
+        feature_value[feature] = st.slider(feature, min_value, max_value, (min_value, max_value))
 
     if (st.button('Find Stocks')):
         with st.spinner(f"Finding and listing stocks ..."):
