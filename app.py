@@ -1,6 +1,7 @@
 import streamlit as st
 import src.pages.home
 import src.pages.black_scholes_model
+import src.pages.stock_screener
 import src.pages.square_test
 
 # st.set_page_config(
@@ -18,6 +19,7 @@ st.markdown(hide_menu_style, unsafe_allow_html=True)
 PAGES = {
     "Home": src.pages.home,
     "Black-Scholes Model": src.pages.black_scholes_model,
+    "Stock Screener": src.pages.stock_screener,
     "Square Calculation Test": src.pages.square_test
 
 }
