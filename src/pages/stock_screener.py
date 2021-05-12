@@ -51,9 +51,9 @@ def app():
             # 한 번 요청할 때마다 최대 50개(1페이지당)만 보여주기 때문에 여러번 크롤링 진행
             totalCount = response_dict['totalCount']
             st.write('Number of stocks found:', totalCount)
-            # 만약 주식 개수가 500개를 넘으면 500개만 보여준다.
-            if (totalCount > 500):
-                st.write('Too many stocks in list; Only 200 stocks will be displayed.')
+            # 만약 주식 개수가 300개를 넘으면 300개만 보여준다.
+            if (totalCount > 300):
+                st.write('If the number of stocks found is more than 300, then only 300 stocks will be displayed.')
             crawling_try = min(totalCount // 50 + 1, 4)
 
             for i in range(crawling_try):
