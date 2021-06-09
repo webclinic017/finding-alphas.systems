@@ -61,9 +61,10 @@ def app():
                 response = requests.post(url, data=params, headers=headers)
                 response_dict_temp = json.loads(response.content)
                 stock_df_temp = pd.DataFrame(response_dict_temp['hits'])
-                stock_df = stock_df.append(stock_df_temp)
+                stock_df = stock_df.append(stock_df_temp, ignore_index=True)
 
-            st.dataframe(stock_df)
+            stock_df_display = stock_df[['name_trans','stock_symbol','exchange_trans','industry_trans','last','eq_market_cap','turnover_volume','avg_volume','a52_week_high','a52_week_low','eq_pe_ratio','eq_dividend','eq_eps','eq_beta','eq_revenue','RSI','STOCH','CCI','MACD','WilliamsR','STOCHRSI','ATR','HL','UO','ROC']]
+            st.dataframe(stock_df_display)
 
 def load_criteria_dict():
 

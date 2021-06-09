@@ -1,13 +1,26 @@
 import streamlit as st
-import src.pages.home
+import src.pages.introduction
 import src.pages.black_scholes_model
 import src.pages.stock_screener
-import src.pages.square_test
+import src.pages.backtesting
+
+IMG_SRC = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/279/magnifying-glass-tilted-left_1f50d.png"
 
 # st.set_page_config(
 #     page_title = "Finding Alphas",
-#     page_icon = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/279/magnifying-glass-tilted-left_1f50d.png",
+#     page_icon = IMG_SRC,
 # )
+
+# Display header.
+st.markdown("<br>", unsafe_allow_html=True)
+st.image(IMG_SRC, width=80)
+
+"""
+# Finding-alphas Systems
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Yeongkyu%20Kim-blue)](https://linkedin.com/in/yeongkyu-kim)
+&nbsp[![Blog](https://img.shields.io/badge/Blog-Q's%20Tech%20Blog-red)](https://karl6885.github.io/)
+"""
+st.markdown("<br>", unsafe_allow_html=True)
 
 hide_menu_style = """
         <style>
@@ -17,10 +30,10 @@ hide_menu_style = """
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 PAGES = {
-    "Home": src.pages.home,
+    "Introduction": src.pages.introduction,
     "Black-Scholes Model": src.pages.black_scholes_model,
     "Stock Screener": src.pages.stock_screener,
-    "Square Calculation Test": src.pages.square_test
+    "Backtesting": src.pages.backtesting,
 
 }
 
