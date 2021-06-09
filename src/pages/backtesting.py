@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 from backtesting import Backtest, Strategy
 from backtesting.lib import crossover, resample_apply
 import FinanceDataReader as fdr
@@ -35,7 +36,8 @@ def app():
         "Moving Average Crossover": SmaCross,
         "Relative Strength Index": RSIStrategy,
         "Bollinger Band": BBStrategy,
-        "RSI-based Modified Strategy": RSIModifiedStrategy
+        "RSI based Modified Strategy": RSIModifiedStrategy,
+        "Volume-Momentum based Modified Strategy": CustomMomentumStrategy
     }
 
     selected_strategy_key = st.selectbox('Select a strategy', list(strategy_dict.keys()))
@@ -174,3 +176,36 @@ class BBStrategy(Strategy):
 
         elif self.lower_bb[-1] > price:
             self.buy()
+
+
+def CustomMomentum(price: pd.Series, volume: pd.Series, n: int, adj: int) -> pd.Series:
+
+    denominator = 1 / np.arange(1+adj, 1+n+adj)[::-1]
+
+    log_return = np.log(pd.Series(price)).diff() * 100
+    volume_mean = pd.Series(volume).rolling(n).mean()
+    normalized_volume = volume / volume_mean
+    custom_momentum = log_return * normalized_volume
+
+    normalized_custom_momentum = custom_momentum.rolling(n).apply(lambda x: np.sum(denominator * x), raw=True)
+
+    return normalized_custom_momentum
+
+class CustomMomentumStrategy(Strategy):
+
+    def init(self):
+        # self.log_return = self.I(LogReturn, self.data.Close)
+        # self.volume_mean = self.I(VolumeMean, self.data.Volume, 20)
+
+        self.custom_momentum = self.I(CustomMomentum, self.data.Close, self.data.Volume, 20, 5)
+
+    def next(self):
+        # price = self.data.Close[-1]
+        # volume = self.data.Volume[-1]
+        # normalized_volume = volume / self.volume_mean
+        # custom_momentum = self.log_return * normalized_volume
+
+        if self.custom_momentum[-1] >= 2.0:
+            self.buy()
+        elif self.custom_momentum[-1] <= -2.0:
+            self.sell()
