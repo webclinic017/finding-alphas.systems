@@ -6,10 +6,10 @@ import src.pages.backtesting
 
 IMG_SRC = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/279/magnifying-glass-tilted-left_1f50d.png"
 
-# st.set_page_config(
-#     page_title = "Finding Alphas",
-#     page_icon = IMG_SRC,
-# )
+st.set_page_config(
+    page_title = "Finding Alphas",
+    page_icon = IMG_SRC,
+)
 
 # Display header.
 st.markdown("<br>", unsafe_allow_html=True)
