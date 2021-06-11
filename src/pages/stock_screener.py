@@ -54,10 +54,10 @@ def app():
             # 만약 주식 개수가 300개를 넘으면 300개만 보여준다.
             if (totalCount > 300):
                 st.write('If the number of stocks found is more than 300, then only 300 stocks will be displayed.')
-            crawling_try = min(totalCount // 50 + 1, 4)
+            crawling_try = min(totalCount // 50 + 1, 5)
 
             for i in range(crawling_try):
-                params['pn'] = i+1
+                params['pn'] = i+2
                 response = requests.post(url, data=params, headers=headers)
                 response_dict_temp = json.loads(response.content)
                 stock_df_temp = pd.DataFrame(response_dict_temp['hits'])
