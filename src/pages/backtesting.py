@@ -138,8 +138,8 @@ class RSIModifiedStrategy(Strategy):
                 self.daily_rsi[-1] > self.level and
                 self.weekly_rsi[-1] > self.level and
                 self.weekly_rsi[-1] > self.daily_rsi[-1] and
-                self.ma10[-1] > self.ma20[-1] > self.ma50[-1] > self.ma100[-1] and
-                price > self.ma10[-1]):
+                self.ma100[-1] < self.ma50[-1] < self.ma20[-1] < self.ma10[-1] < price) \
+                and not self.position.is_long:
 
             # Buy at market price on next open, but do
             # set 8% fixed stop loss.
@@ -205,7 +205,7 @@ class CustomMomentumStrategy(Strategy):
         # normalized_volume = volume / self.volume_mean
         # custom_momentum = self.log_return * normalized_volume
 
-        if self.custom_momentum[-1] >= 2.0:
+        if self.custom_momentum[-1] >= 2.0 and not self.position.is_long:
             self.buy()
-        elif self.custom_momentum[-1] <= -2.0:
+        elif self.custom_momentum[-1] <= -2.0 and not self.position.is_short:
             self.sell()
