@@ -15,10 +15,10 @@ def app():
     st.write('### Calculate the factor correlation of US ETFs using MSCI World index data')
     st.write('Below is [MSCI Index data](https://www.msci.com/end-of-day-data-search) used in calculating factor correlation')
 
-    st.write('- `Market` : MSCI World Indexes\n- `Value` : MSCI World Enhanced Value Indexes\n- `Size` : MSCI World Small Cap Indexes\n- `Momentum` : MSCI World Momentum Indexes\n- `Quality` : MSCI World Quality Indexes\n- `Yield` : MSCI World High Dividend Yield Indexes\n- `Growth` : MSCI World Growth Indexes\n- `Volatility` : MSCI WORLD Minimum Volatility Indexes')
+    st.write('- `Market` : MSCI World Indexes\n- `Value` : MSCI World Enhanced Value Indexes\n- `Size` : MSCI World Small Cap Indexes\n- `Momentum` : MSCI World Momentum Indexes\n- `Quality` : MSCI World Quality Indexes\n- `Yield` : MSCI World High Dividend Yield Indexes\n- `Growth` : MSCI World Growth Indexes\n- `Volatility` : MSCI World Minimum Volatility Indexes')
 
     # Type US ETF Ticker to Analysis
-    etf_ticker = st.text_input('Type US ETF Ticker to Analysis', 'SOXX')
+    etf_ticker = st.text_input('Type US ETF Ticker to Analyze', 'SOXX')
 
     # Set Start Date for Analysis
     start_date = st.date_input("Set Start Date for Analysis", date(2019, 1, 1))
