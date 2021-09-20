@@ -18,7 +18,7 @@ def app():
     st.write('- `Market` : MSCI World Indexes\n- `Value` : MSCI World Enhanced Value Indexes\n- `Size` : MSCI World Small Cap Indexes\n- `Momentum` : MSCI World Momentum Indexes\n- `Quality` : MSCI World Quality Indexes\n- `Yield` : MSCI World High Dividend Yield Indexes\n- `Growth` : MSCI World Growth Indexes\n- `Volatility` : MSCI WORLD Minimum Volatility Indexes')
 
     # Type US ETF Ticker to Analysis
-    etf = st.text_input('Type US ETF Ticker to Analysis', 'SOXX')
+    etf_ticker = st.text_input('Type US ETF Ticker to Analysis', 'SOXX')
 
     # Set Start Date for Analysis
     start_date = st.date_input("Set Start Date for Analysis", date(2019, 1, 1))
@@ -36,7 +36,7 @@ def app():
     if (st.button('Calculate correlation')):
 
         # ETF 데이터 다운로드
-        etf_data = fdr.DataReader(etf.capitalize())
+        etf_data = fdr.DataReader(etf_ticker.capitalize())
         # soxx = fdr.DataReader('SOXX')#,'2015-01-01')
         # start_date = str(soxx.index[0]).split(" ")[0].replace("-","")
 
@@ -105,7 +105,7 @@ def app():
             xaxis_title="Correlation",
             yaxis_title="Factor",
             title={
-                'text': "Plot Title",
+                'text': etf_ticker + "-Factor Correlation",
                 'x': 0.5,
                 'xanchor': 'center',
                 'yanchor': 'top'},
