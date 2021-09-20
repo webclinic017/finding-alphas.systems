@@ -18,9 +18,10 @@ st.image(IMG_SRC, width=80)
 
 """
 # Finding-alphas Systems
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Yeongkyu%20Kim-blue)](https://linkedin.com/in/yeongkyu-kim)
 &nbsp[![Blog](https://img.shields.io/badge/Blog-Q's%20Tech%20Blog-red)](https://karl6885.github.io/)
 """
+# 링크드인 링크 잠시 삭제(블라인드 채용) [![LinkedIn](https://img.shields.io/badge/LinkedIn-Yeongkyu%20Kim-blue)](https://linkedin.com/in/yeongkyu-kim)
+
 st.markdown("<br>", unsafe_allow_html=True)
 
 hide_menu_style = """
