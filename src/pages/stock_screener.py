@@ -6,7 +6,7 @@ import pandas as pd
 def app():
     st.title('Stock Screener')
 
-    st.write('Find stocks with various criteria')
+    st.write('### Find stocks with various criteria')
     default_criteria = ['PER','PBR','EPS','Beta']
     criteria_dict = load_criteria_dict()
 

@@ -8,9 +8,9 @@ import FinanceDataReader as fdr
 from backtesting.test import SMA
 
 def app():
-    st.title('Backtesting')
+    st.title('Simple Backtesting')
 
-    st.write('Backtest simple strategies using `Backtesting.py` with daily historical price data')
+    st.write('### Backtest simple strategies using `Backtesting.py` with daily historical price data')
 
     stock_dict = {
         "(Stock) Apple": "AAPL",
