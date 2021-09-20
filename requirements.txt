@@ -82,3 +82,4 @@ backtesting==0.3.1
 finance-datareader==0.9.31
 beautifulsoup4==4.9.3
 matplotlib==3.4.2
+-e git://github.com/quantopian/pyfolio.git#egg=pyfolio
