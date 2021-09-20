@@ -13,7 +13,7 @@ def app():
     st.title('Portfolio-Factor Correlation Calculator')
 
     st.write('### Calculate the factor correlation of US ETFs using MSCI World index data')
-    st.write('Below are [MSCI Index data](https://www.msci.com/end-of-day-data-search) used in calculating factor correlation')
+    st.write('Below is [MSCI Index data](https://www.msci.com/end-of-day-data-search) used in calculating factor correlation')
 
     st.write('- `Market` : MSCI World Indexes\n- `Value` : MSCI World Enhanced Value Indexes\n- `Size` : MSCI World Small Cap Indexes\n- `Momentum` : MSCI World Momentum Indexes\n- `Quality` : MSCI World Quality Indexes\n- `Yield` : MSCI World High Dividend Yield Indexes\n- `Growth` : MSCI World Growth Indexes\n- `Volatility` : MSCI WORLD Minimum Volatility Indexes')
 
