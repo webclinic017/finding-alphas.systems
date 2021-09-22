@@ -37,7 +37,7 @@ PAGES = {
     "Introduction": src.pages.introduction,
     "Black-Scholes Model": src.pages.black_scholes_model,
     "Stock Screener": src.pages.stock_screener,
-    "Monte-Carlo Simulation": src.pages.monte_carlo_simulation,
+    "Monte Carlo Simulation": src.pages.monte_carlo_simulation,
     "Simple Backtesting": src.pages.backtesting,
     "Cross-Asset Momentum Backtesting": src.pages.cross_asset_momentum,
     "Portfolio-Factor Correlation": src.pages.factor_correlation
