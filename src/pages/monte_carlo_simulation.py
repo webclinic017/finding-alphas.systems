@@ -7,7 +7,7 @@ import FinanceDataReader as fdr
 def app():
     st.title('Monte Carlo Simulation for Price Prediction')
 
-    st.write('### Simple Monte Carlo simulation for price prediction with daily historical price data')
+    st.write('### Predict price using Monte Carlo simulation and daily historical price data')
 
     stock_dict = {
         "(Stock) Apple": "AAPL",
