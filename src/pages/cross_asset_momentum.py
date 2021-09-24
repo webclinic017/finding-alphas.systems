@@ -7,7 +7,7 @@ def app():
     st.title('Cross-Asset Momentum Backtesting')
 
     st.write('### Backtest cross-asset momentum strategies with risk models for 4 asset classes using `pyfolio`')
-    st.write('Below are asset classes used in backtest')
+    st.write('Below are asset classes used in backtest :')
     st.write('- `Equity` : DAX Index, Eurostoxx 50 Index, FTSE 100 Index, S&P 500 Index, Nasdaq 100 Index, Nikkei 225 Index, Topix Index, KOSPI 200 Index, Hang Seng Index\n- `Currencies` : EURUSD, GBPUSD, SEKUSD, CADUSD, JPYUSD, AUDUSD, NZDUSD, USDKRW\n- `Commodities` : Brent Crude, WTI Crude, Heating Oil, Natural Gas, Gold, Silver, Copper, Corn, Soybean\n- `Fixed Income` : Eurodollar, UST 2Y, UST 5Y, UST 10Y, UST Long, Euro Schatz, Euro Bobl, Euro Bund, Gilt 10Y, JGB 10Y, AGB 3Y, AGB 10Y')
 
     url = 'https://raw.githubusercontent.com/davidkim0523/Momentum/main/Data.csv'
