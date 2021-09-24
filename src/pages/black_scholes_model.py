@@ -6,7 +6,7 @@ import plotly.graph_objs as go
 def app():
     st.title('Black-Scholes Model')
 
-    st.write('### Theoretical estimate of the price of European-style options')
+    st.write('### Estimate the theoretical price of european option')
 
     option_type = st.radio("Option type", ('Call','Put'))
     S = st.number_input("Current underlying asset price", value=100)
